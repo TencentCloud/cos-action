@@ -34,7 +34,7 @@ Github Action to upload to Tencent Cloud COS
 ## Example usage
 
 ```
-uses: TencentCloud/cos-action@master
+uses: TencentCloud/cos-action@v1
 with:
   secret_id: ${{ secrets.TENCENT_CLOUD_SECRET_ID }}
   secret_key: ${{ secrets.TENCENT_CLOUD_SECRET_KEY }}
