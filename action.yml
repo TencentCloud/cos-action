@@ -1,5 +1,8 @@
 name: 'Tencent Cloud COS Action'
 description: 'Upload files to Tencent Cloud COS'
+branding:
+  icon: 'upload-cloud'
+  color: 'blue'
 inputs:
   secret_id:
     description: 'Tencent cloud secret id. Should be referred to a encrypted environment variable'
