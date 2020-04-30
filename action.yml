@@ -25,6 +25,9 @@ inputs:
   clean:
     description: 'Set to true for cleaning files on COS path which are not existed in local path. Default is false'
     required: false
+  accelerate:
+    description: 'Set to true for using accelerate domain to upload files. Default is false'
+    required: false
 runs:
   using: 'node12'
   main: 'index.js'

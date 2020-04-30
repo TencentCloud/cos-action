@@ -23,7 +23,7 @@ const uploadFileToCOS = (cos, path) => {
             Region: cos.region,
             Key: Path.join(cos.remotePath, path),
             StorageClass: 'STANDARD',
-            Body: fs.createReadStream(Path.join(cos.localPath, path)), 
+            Body: fs.createReadStream(Path.join(cos.localPath, path)),
         }, function(err, data) {
             if (err) {
                 return reject(err);
@@ -161,6 +161,7 @@ try {
         cli: new COS({
             SecretId: core.getInput('secret_id'),
             SecretKey: core.getInput('secret_key'),
+            Domain: core.getInput('accelerate') === 'true' ? '{Bucket}.cos.accelerate.myqcloud.com' : undefined,
         }),
         bucket: core.getInput('cos_bucket'),
         region: core.getInput('cos_region'),

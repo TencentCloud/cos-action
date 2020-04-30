@@ -1,4 +1,5 @@
 # cos-action
+
 Github Action to upload to Tencent Cloud COS
 
 ## Inputs
@@ -30,6 +31,10 @@ Github Action to upload to Tencent Cloud COS
 ### `clean`
 
 **Optional** Set to true for cleaning files on COS path which are not existed in local path. Default is false.
+
+### `accelerate`
+
+**Optional** Set to true for using accelerate domain to upload files. Default is false.
 
 ## Example usage
 
