@@ -171,7 +171,7 @@ try {
     };
 
     process(cos).catch((reason) => {
-        core.setFailed(`fail to upload files to cos: ${reason}`);
+        core.setFailed(`fail to upload files to cos: ${reason.message}`);
     });
 } catch (error) {
     core.setFailed(error.message);
