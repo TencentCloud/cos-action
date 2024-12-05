@@ -1,36 +1,38 @@
-name: 'New Tencent Cloud COS Action'
-description: 'Upload files to Tencent Cloud COS'
+name: "New Tencent Cloud COS Action"
+description: "Upload files to Tencent Cloud COS"
 branding:
-  icon: 'upload-cloud'
-  color: 'blue'
+  icon: "upload-cloud"
+  color: "blue"
 inputs:
   secret_id:
-    description: 'Tencent cloud secret id. Should be referred to a encrypted environment variable'
+    description: "Tencent cloud secret id. Should be referred to a encrypted environment variable"
     required: true
   secret_key:
-    description: 'Tencent cloud secret key. Should be referred to a encrypted environment variable'
+    description: "Tencent cloud secret key. Should be referred to a encrypted environment variable"
     required: true
   cos_bucket:
-    description: 'COS bucket name'
+    description: "COS bucket name"
     required: true
   cos_region:
-    description: 'COS bucket region'
+    description: "COS bucket region"
     required: true
   local_path:
-    description: 'Local path to be uploaded to COS. Directory or file is allowed'
+    description: "Local path to be uploaded to COS. Directory or file is allowed"
     required: true
   remote_path:
-    description: 'COS path to put the local files in on COS'
+    description: "COS path to put the local files in on COS"
     required: true
   clean:
-    description: 'Set to true for cleaning files on COS path which are not existed in local path. Default is false'
+    description: "Set to true for cleaning files on COS path which are not existed in local path. Default is false"
     required: false
   accelerate:
-    description: 'Set to true for using accelerate domain to upload files. Default is false'
+    description: "Set to true for using accelerate domain to upload files. Default is false"
     required: false
   cos_storage_class:
-    description: 'COS storage class'
+    description: "COS storage class"
     required: false
 runs:
-  using: 'node12'
-  main: 'index.js'
+  using: "node12"
+  main: "index.js"
+  pre: |
+    npm install
