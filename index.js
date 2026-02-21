@@ -70,13 +70,7 @@ const listFilesOnCOS = (cos, nextMarker) => {
 const collectLocalFiles = async (cos) => {
     const root = cos.localPath;
     const files = new Set();
-    await walk(root, (path) => {
-        let p = path.substring(root.length);
-        for (;p[0] === '/';) {
-            p = p.substring(1);
-        }
-        files.add(p);
-    });
+    await walk(root, (path) => files.add(Path.relative(root,path)));
     return files;
 }
 
